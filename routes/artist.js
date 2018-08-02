@@ -12,6 +12,7 @@ var md_auth = require('../middlewares/authenticated');
 //var md_upload = multipart({uploadDir:'./uploads/artists'});
 
 api.get('/artist', md_auth.ensureAuth, ArtistController.getArtist);
+api.post('/artist', md_auth.ensureAuth, ArtistController.saveArtist);
 
 console.log("Rutas de artista cargadas.")
 module.exports = api;
