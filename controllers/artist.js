@@ -2,6 +2,7 @@
 
 var fs = require("fs");
 var path = require("path");
+var moongosePaginate = require("mongoose-pagination");
 
 var Artist = require('../models/artist');
 var Album = require('../models/album');
@@ -11,14 +12,81 @@ var Song = require('../models/song');
 
 function getArtist(req, res){
 
-  console.log("GET: /api/artist");
+  console.log("GET: /api/artist/:id");
 
-  res.status(200).send({
-    message: 'Probabando una acción del controlador de artistas api rest con node y mongodb'
+  var artistID = req.params.id;
+
+  Artist.findById(artistID, (err, artist) => {
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error en la petición'
+      });
+
+    } else {
+      if (!artist) {
+
+        res.status(404).send({
+          message: 'Artista no encontrado'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Artista encontrado',
+          artist
+        });
+
+      }
+    }
+
   });
+
 
 }
 
+function getArtists(req, res){
+
+  console.log("GET: /api/artists/:page");
+
+  if (req.params.page) {
+    var page = req.params.page;
+  } else {
+    var page = 1;
+  }
+
+  var itemsPerPage = 3;
+
+  Artist.find().sort('name').paginate(page, itemsPerPage, (err, artists, total) => {
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error en la petición'
+      });
+
+    } else {
+      if (!artists) {
+
+        res.status(404).send({
+          message: 'No se han encontrado artistas.'
+        });
+
+      } else {
+
+        return res.status(200).send({
+          message: 'Artistas encontrados',
+          total_artists: total,
+          artists: artists
+        });
+
+      }
+    }
+
+  });
+
+}
 function saveArtist(req, res){
 
   console.log("Post: /api/artist");
@@ -61,13 +129,10 @@ function saveArtist(req, res){
 
   });
 
-  res.status(200).send({
-    message: 'Probabando una acción del controlador de artistas api rest con node y mongodb'
-  });
-
 }
 
 module.exports = {
   getArtist,
+  getArtists,
   saveArtist
 };
