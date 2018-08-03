@@ -87,6 +87,8 @@ function getArtists(req, res){
   });
 
 }
+
+
 function saveArtist(req, res){
 
   console.log("Post: /api/artist");
@@ -131,8 +133,47 @@ function saveArtist(req, res){
 
 }
 
+function updateArtist(req, res){
+
+  console.log("PUT: /api/artist");
+
+  var artistID = req.params.id;
+  var update = req.body;
+
+  Artist.findByIdAndUpdate(artistID, update, (err, artistUpdated) => {
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error al actualizar el artista.'
+      });
+
+    } else {
+
+      if (!artistUpdated) {
+
+        res.status(404).send({
+          message: 'El artista no ha sido actualizado.'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Artista actualizado.',
+          artistUpdated
+        });
+
+      }
+
+    }
+
+  });
+
+}
 module.exports = {
   getArtist,
   getArtists,
-  saveArtist
+  saveArtist,
+  updateArtist
+
 };
