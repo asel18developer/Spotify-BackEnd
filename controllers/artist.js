@@ -170,10 +170,99 @@ function updateArtist(req, res){
   });
 
 }
+
+function deleteArtist(req, res){
+
+  console.log("DELETE: /api/delete-artist");
+
+  var artistID = req.params.id;
+
+  Artist.findByIdAndRemove(artistID, function(err, artistRemoved){
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error al elimnar el artista.'
+      });
+
+    } else {
+
+      if (!artistRemoved) {
+
+        res.status(404).send({
+          message: 'El artista no ha sido eliminado.'
+        });
+
+      } else {
+
+        Album.find({artist: artistRemoved._id}).remove(function(err, albumRemoved){
+
+          if (err) {
+
+            res.status(500).send({
+              message: 'Error al elimnar el album.'
+            });
+
+          } else {
+
+            if (!albumRemoved) {
+
+              res.status(404).send({
+                message: 'El album no ha sido eliminado.'
+              });
+
+            } else {
+
+              Song.find({album: albumRemoved._id}).remove(function(err, songRemoved){
+
+                if (err) {
+
+                  res.status(500).send({
+                    message: 'Error al elimnar la canción.'
+                  });
+
+                } else {
+
+                  if (!songRemoved) {
+
+                    res.status(404).send({
+                      message: 'La canción no ha sido eliminada.'
+                    });
+
+                  } else {
+
+                    res.status(200).send({
+                      message: 'El artista y toda su información ha sido eliminado correctamente.',
+                      artistRemoved
+                    });
+
+                  }
+
+                }
+
+              });
+
+            }
+
+          }
+
+        });
+
+      }
+
+    }
+
+  });
+
+
+
+}
+
 module.exports = {
   getArtist,
   getArtists,
   saveArtist,
-  updateArtist
+  updateArtist,
+  deleteArtist
 
 };
