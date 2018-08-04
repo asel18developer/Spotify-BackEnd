@@ -12,6 +12,84 @@ var extensions = ["jpg", "png", "jpeg"];
 
 function getAlbum(req, res){
 
+  console.log("GET: /api/album");
+
+  var albumID = req.params.artist;
+
+  Album.findById(albumID).populate({path: 'artist'}).exec((err, album) => {
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error en la petición'
+      });
+
+    } else {
+
+      if (!album) {
+
+        res.status(404).send({
+          message: 'El album no existe'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Album encontrado correctamente',
+          album
+        });
+
+      }
+
+    }
+
+  });
+}
+
+function getAlbums(req, res){
+
+  console.log("GET: /api/album");
+
+  var artistID = req.params.id;
+
+  if (!artistID) { //Todos los albums
+
+    var find = Album.find({}).sort('title');
+
+  } else { // Unicamente los albums del artista pasado
+
+    var find = Album.find({artist: artistID}).sort('year');
+
+  }
+
+  find.populate({path: 'artist'}).exec((err, albums) => {
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error en la petición'
+      });
+
+    } else {
+
+      if (!albums) {
+
+        res.status(404).send({
+          message: 'No existen albums'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Albums encontrado correctamente',
+          albums
+        });
+
+      }
+
+    }
+  });
+
 }
 
 function saveAlbum(req, res){
@@ -60,5 +138,6 @@ function saveAlbum(req, res){
 
 module.exports = {
   getAlbum,
+  getAlbums,
   saveAlbum
 };

@@ -1,0 +1,7 @@
+1) Ver paquetes desfasados
+
+npm outdated
+
+2) Actualizarlos
+
+npm update

@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "3215b66e-b380-43bf-a538-485f3bb8157e",
+		"name": "Spotify Udemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "9289ac7d-bbba-425c-bcb5-6d5040150a49",
+			"name": "User - Probando controlador",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/probando-controlador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"probando-controlador"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5a3e4dfa-fc31-428f-81b7-9502263e2680",
+			"name": "User- Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pedro@garcia.es",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwerty",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gethash",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "0eecc6c1-1329-44a8-a12a-fed7ba3d732f",
+			"name": "User- Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "pedro@garcia.es",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwerty",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gethash",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8d213aae-3bee-4051-9a73-28f79b6b29e9",
+			"name": "User - Get Image",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/get-image-user/CvO1SzjSSqRjDVAP9GOiDRPj.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"get-image-user",
+						"CvO1SzjSSqRjDVAP9GOiDRPj.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "12ce7b41-d740-4095-9282-365f1990585f",
+			"name": "Album - Get Album",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/album/5b661fdb5179770068e34ce8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"album",
+						"5b661fdb5179770068e34ce8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "49b68949-5445-4fd8-a056-b101ec77402c",
+			"name": "Album - Get Albums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "982d52d1-fc94-4a3d-9169-78374cba93db",
+			"name": "Album - Save album",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Un alumno mas",
+							"sessionValue": "Volvamos a empezar",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2014",
+							"sessionValue": "2010",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Melendi - Un alumno más - Sony Records",
+							"sessionValue": "Melendi - Volvamos a empezar - Sony Records",
+							"type": "text"
+						},
+						{
+							"key": "artist",
+							"value": "5b6362fe06a4a0013e9c0224",
+							"sessionValue": "5b6362fe06a4a0013e9c0224",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/album",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "35ae9cc9-fb27-4e89-a86d-6d7434d021f2",
+			"name": "Artist - Get Artist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/artist/5b642e22c3380c0107b881ae",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"artist",
+						"5b642e22c3380c0107b881ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "933581f4-80ce-4e7c-9083-718494979491",
+			"name": "Artist - Upload Image Artist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"sessionValue": {
+								"0": {}
+							},
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/upload-image-artist/5b63630c1810c20149504b46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"upload-image-artist",
+						"5b63630c1810c20149504b46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "c5a78cec-65de-45c6-8dbf-a5ce827399e6",
+			"name": "Artist - Get Image Artist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/get-image-artist/NMliwixUCMNztEoejGS3Vpjp.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"get-image-artist",
+						"NMliwixUCMNztEoejGS3Vpjp.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d19717da-fdc6-4db3-bc1a-27e9ac1e5085",
+			"name": "Artist - Get Artists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3977/api/artists/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"artists",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9a497527-713e-463d-aed9-ad15ad084190",
+			"name": "Artist - Post Artist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Rayden",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Rap Español",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/artist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"artist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2fa0b4b2-3837-491e-a2da-4148134f60eb",
+			"name": "Artist - Update Artist",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Extremoduro",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "Rock/Punk Español",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/update-artist/5b642f2d5fb2530121cf609b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"update-artist",
+						"5b642f2d5fb2530121cf609b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e327774c-4beb-477f-a604-94a014f03c6d",
+			"name": "Artist - Delete Artist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Extremoduro",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "Rock/Punk Español",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/delete-artist/5b642f3e5fb2530121cf609d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"delete-artist",
+						"5b642f3e5fb2530121cf609d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f71beb36-aa09-48fd-b1ed-091b7a17ca9c",
+			"name": "User - Upload Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/upload-image-user/5b4e413e24861e04e590e29f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"upload-image-user",
+						"5b4e413e24861e04e590e29f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
