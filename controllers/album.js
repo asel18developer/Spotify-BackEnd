@@ -136,8 +136,50 @@ function saveAlbum(req, res){
 
 }
 
+function updateAlbum(req, res){
+
+  console.log("PUT: /api/album");
+
+  var albumID = req.params.id;
+  var updateInfo = req.body;
+
+  Album.findByIdAndUpdate(albumID, updateInfo, (err, albumUpdated) => {
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error en la petición'
+      });
+
+    } else {
+
+      if (!albumUpdated) {
+
+        res.status(404).send({
+          message: 'No se ha actualizado el album, porque no existe'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Album actualziado correctamente',
+          albumUpdated
+        });
+
+      }
+
+    }
+
+  });
+
+
+
+
+}
+
 module.exports = {
   getAlbum,
   getAlbums,
-  saveAlbum
+  saveAlbum,
+  updateAlbum
 };
