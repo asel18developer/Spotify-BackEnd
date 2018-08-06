@@ -238,10 +238,117 @@ function deleteAlbum(req, res){
 
 }
 
+function uploadImage(req, res){
+
+  console.log("POST: /api/upload-image-album/:id");
+
+  var albumID = req.params.id;
+  var file_name = "No subido";
+
+  if (req.files) {
+
+    var file_path = req.files.image.path;
+    var file_split = file_path.split("\/");
+    var file_name = file_split[2];
+
+    var ext_split = file_name.split("\.");
+    var file_ext = ext_split[1];
+
+    if (extensions.indexOf(file_ext) > -1){
+
+      Album.findByIdAndUpdate(albumID, {image: file_name}, function(err, albumUpdated){
+
+              if (err) {
+
+                res.status(500).send({
+                  type: 'Error',
+                  message: 'Error al actualizar la imagen.',
+                  file_path: file_path,
+                  file_name: file_name,
+                  file_ext: file_ext
+                });
+
+              } else {
+
+                if (!albumUpdated) {
+                  res.status(404).send({
+                    type: 'Error',
+                    message: 'No se pudo actualizar la imagen.',
+                    file_path: file_path,
+                    file_name: file_name,
+                    file_ext: file_ext
+                  });
+                } else {
+
+                  res.status(200).send({
+                    type: 'Succesfull',
+                    message: 'Imagen subida correctamente.',
+                    file_path: file_path,
+                    file_name: file_name,
+                    file_ext: file_ext
+                  });
+
+                }
+
+              }
+      });
+
+
+
+    }else{
+      res.status(500).send({
+
+        type: 'Error',
+        message: 'Extensión de la imagen invalida.',
+        file_path: file_path,
+        file_name: file_name,
+        file_ext: file_ext
+      });
+
+    }
+  } else {
+    res.status(404).send({
+      type: 'Forbbiden',
+      message: 'Sin imagen.',
+      files: req.files
+    });
+  }
+
+}
+
+function getImage(req, res){
+
+    console.log("GET: /api/get-image-album/:imageFile");
+
+    var imageFile = req.params.imageFile
+    var file = "./uploads/albums/"+imageFile;
+    fs.exists( file, function(exist){
+
+      if (exist) {
+
+        res.sendFile(path.resolve(file));
+
+      } else {
+
+        res.status(404).send({
+          type: 'Forbbiden',
+          message: 'No existe la imagen solicitada.',
+          imageFile: imageFile
+        });
+
+      }
+
+    });
+
+};
+
 module.exports = {
   getAlbum,
   getAlbums,
   saveAlbum,
   updateAlbum,
   deleteAlbum,
+  getImage,
+  uploadImage
+
 };
