@@ -1,5 +1,7 @@
 'use strict'
 
+const API_ROUTE = '/api'
+
 var express = require("express");
 var bodyParser = require("body-parser");
 
@@ -16,8 +18,8 @@ app.use(bodyParser.json());
 // configurar cabeceras http
 
 //rutas base
-app.use('/api', user_routes);
-app.use('/api', artist_routes);
-app.use('/api', album_routes);
+app.use(API_ROUTE, user_routes);
+app.use(API_ROUTE, artist_routes);
+app.use(API_ROUTE, album_routes);
 
 module.exports = app;

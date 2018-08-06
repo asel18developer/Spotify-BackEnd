@@ -177,9 +177,71 @@ function updateAlbum(req, res){
 
 }
 
+function deleteAlbum(req, res){
+
+  console.log("DELETE: /api/album");
+
+  var albumID = req.params.id;
+
+  Album.findByIdAndRemove(albumID, function(err, albumRemoved){
+
+    if (err) {
+
+      res.status(500).send({
+        message: 'Error al elimnar el album.'
+      });
+
+    } else {
+
+      if (!albumRemoved) {
+
+        res.status(404).send({
+          message: 'El album no existe.'
+        });
+
+      } else {
+
+        Song.find({album: albumRemoved._id}).remove(function(err, songRemoved){
+
+          if (err) {
+
+            res.status(500).send({
+              message: 'Error al elimnar la canción.'
+            });
+
+          } else {
+
+            if (!songRemoved) {
+
+              res.status(404).send({
+                message: 'La canción no ha sido eliminada.'
+              });
+
+            } else {
+
+              res.status(200).send({
+                message: 'El album y toda su información ha sido eliminado correctamente.',
+                albumRemoved
+              });
+
+            }
+
+          }
+
+        });
+
+      }
+
+    }
+
+  });
+
+}
+
 module.exports = {
   getAlbum,
   getAlbums,
   saveAlbum,
-  updateAlbum
+  updateAlbum,
+  deleteAlbum,
 };
