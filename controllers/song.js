@@ -144,8 +144,49 @@ function saveSong(req, res){
 
 }
 
+function updateSong(req, res){
+
+  console.log("PUT: /api/song");
+
+  var songID = req.params.id;
+  var data = req.body;
+
+  Song.findByIdAndUpdate(songID, data, function(err, songUpdated){
+
+    if (err) {
+
+      res.status(500).send({
+        type: 'Error',
+        message: 'Error en la petición',
+        data: data
+      });
+
+    } else {
+
+      if (!songUpdated) {
+        res.status(404).send({
+          type: 'Error',
+          message: 'No existe la canción.',
+          data: data
+        });
+      } else {
+
+        res.status(200).send({
+          type: 'Succesfull',
+          message: 'Canción actualizada.',
+          song: songUpdated,
+        });
+
+      }
+
+    }
+  });
+
+}
+
 module.exports = {
   getSong,
   getSongs,
-  saveSong
+  saveSong,
+  updateSong
 };

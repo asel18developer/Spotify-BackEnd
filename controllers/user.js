@@ -177,7 +177,6 @@ function updateUser(req, res){
             type: 'Succesfull',
             message: 'Usuario actualizado.',
             user: userUpdated,
-            data: data
           });
 
         }
