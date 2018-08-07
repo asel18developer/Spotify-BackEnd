@@ -12,15 +12,95 @@ var extensions = ["jpg", "png", "jpeg"];
 
 function getSong(req, res){
 
-  res.status(200).send({
-    message: 'Petición recibida correctamente.'
+  console.log("GET: /api/song");
+
+  var songID = req.params.id;
+
+  Song.findById(songID).populate({path: 'album'}).exec(function (err, song){
+
+    if (err) {
+
+      console.error("Error in call to GET /api/song" + JSON.stringify(err));
+
+      res.status(500).send({
+        message: 'Error al realizar la petición en el servidor'
+      });
+
+    } else {
+
+      if (!song) {
+
+        res.status(404).send({
+          message: 'No existe esa canción'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Canción encontrada.',
+          song
+        });
+
+      }
+    }
+
+  });
+
+}
+
+function getSongs(req, res){
+
+  console.log("GET: /api/songs");
+
+  var albumID = req.params.album;
+
+  if (!albumID) {
+    var find = Song.find({}).sort('number');
+  } else {
+    var find = Song.find({album: albumID}).sort('number');
+  }
+
+  find.populate({
+    path: 'album',
+    populate: {
+      path: 'artist',
+      model: 'Artist'
+    }
+  }).exec(function (err, songs){
+
+    if (err) {
+
+      console.error("Error in call to GET /api/songs" + JSON.stringify(err));
+
+      res.status(500).send({
+        message: 'Error al realizar la petición en el servidor'
+      });
+
+    } else {
+
+      if (!songs) {
+
+        res.status(404).send({
+          message: 'No existen canciones'
+        });
+
+      } else {
+
+        res.status(200).send({
+          message: 'Canciones obtenidas correctamente.',
+          songs
+        });
+
+      }
+    }
+
   });
 
 }
 
 function saveSong(req, res){
 
-  console.log("Post: /api/song");
+  console.log("POST: /api/song");
 
   var song = new Song();
   var data = req.body;
@@ -36,7 +116,7 @@ function saveSong(req, res){
 
     if (err) {
 
-      console.error("Error in call to Post: /api/song" + JSON.stringify(err));
+      console.error("Error in call to POST /api/song" + JSON.stringify(err));
 
       res.status(500).send({
         message: 'Error al realizar la petición en el servidor'
@@ -66,5 +146,6 @@ function saveSong(req, res){
 
 module.exports = {
   getSong,
+  getSongs,
   saveSong
 };
