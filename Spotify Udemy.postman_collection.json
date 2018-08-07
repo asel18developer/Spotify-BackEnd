@@ -1,12 +1,11 @@
 {
 	"info": {
-		"_postman_id": "3215b66e-b380-43bf-a538-485f3bb8157e",
-		"name": "Spotify Udemy",
+		"_postman_id": "f4eee1d6-f24b-480f-b5a6-caa47be563f0",
+		"name": "Spotify Udemy copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"_postman_id": "9289ac7d-bbba-425c-bcb5-6d5040150a49",
 			"name": "User - Probando controlador",
 			"request": {
 				"method": "GET",
@@ -16,7 +15,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/probando-controlador",
 					"protocol": "http",
@@ -33,7 +35,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "5a3e4dfa-fc31-428f-81b7-9502263e2680",
 			"name": "User- Login",
 			"request": {
 				"method": "POST",
@@ -91,7 +92,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "0eecc6c1-1329-44a8-a12a-fed7ba3d732f",
 			"name": "User- Register",
 			"request": {
 				"method": "POST",
@@ -149,7 +149,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8d213aae-3bee-4051-9a73-28f79b6b29e9",
 			"name": "User - Get Image",
 			"request": {
 				"method": "GET",
@@ -159,7 +158,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/get-image-user/CvO1SzjSSqRjDVAP9GOiDRPj.jpg",
 					"protocol": "http",
@@ -177,7 +179,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "12ce7b41-d740-4095-9282-365f1990585f",
 			"name": "Album - Get Album",
 			"request": {
 				"method": "GET",
@@ -187,7 +188,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/album/5b661fdb5179770068e34ce8",
 					"protocol": "http",
@@ -205,7 +209,93 @@
 			"response": []
 		},
 		{
-			"_postman_id": "49b68949-5445-4fd8-a056-b101ec77402c",
+			"name": "Song - Get Song",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/song",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"song"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Song - Get Songs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Song - Save Song",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/song",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"song"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Album - Get Albums",
 			"request": {
 				"method": "GET",
@@ -215,7 +305,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/albums",
 					"protocol": "http",
@@ -232,7 +325,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "982d52d1-fc94-4a3d-9169-78374cba93db",
 			"name": "Album - Save album",
 			"request": {
 				"method": "POST",
@@ -263,13 +355,13 @@
 						},
 						{
 							"key": "description",
-							"value": "Melendi - Un alumno más - Sony Records",
+							"value": "Melendi -  Un alumno mas",
 							"sessionValue": "Melendi - Volvamos a empezar - Sony Records",
 							"type": "text"
 						},
 						{
 							"key": "artist",
-							"value": "5b6362fe06a4a0013e9c0224",
+							"value": "5b68a2fce7846b10ad7e0b44",
 							"sessionValue": "5b6362fe06a4a0013e9c0224",
 							"type": "text"
 						}
@@ -291,7 +383,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "35ae9cc9-fb27-4e89-a86d-6d7434d021f2",
 			"name": "Artist - Get Artist",
 			"request": {
 				"method": "GET",
@@ -301,7 +392,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/artist/5b642e22c3380c0107b881ae",
 					"protocol": "http",
@@ -319,8 +413,46 @@
 			"response": []
 		},
 		{
-			"_postman_id": "933581f4-80ce-4e7c-9083-718494979491",
 			"name": "Artist - Upload Image Artist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"sessionValue": {
+								"0": {}
+							},
+							"type": "file",
+							"value": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/upload-image-artist/5b63630c1810c20149504b46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"upload-image-artist",
+						"5b63630c1810c20149504b46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Album - Upload Image Album",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -342,7 +474,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3977/api/upload-image-artist/5b63630c1810c20149504b46",
+					"raw": "http://localhost:3977/api/upload-image-album/5b68a33ae7846b10ad7e0b46",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -350,15 +482,14 @@
 					"port": "3977",
 					"path": [
 						"api",
-						"upload-image-artist",
-						"5b63630c1810c20149504b46"
+						"upload-image-album",
+						"5b68a33ae7846b10ad7e0b46"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"_postman_id": "c5a78cec-65de-45c6-8dbf-a5ce827399e6",
 			"name": "Artist - Get Image Artist",
 			"request": {
 				"method": "GET",
@@ -368,7 +499,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/get-image-artist/NMliwixUCMNztEoejGS3Vpjp.jpg",
 					"protocol": "http",
@@ -386,7 +520,36 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d19717da-fdc6-4db3-bc1a-27e9ac1e5085",
+			"name": "Album - Get Image Album",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/get-image-album/cJvw8kSPe75-O5jZD28lrd0D.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"get-image-album",
+						"cJvw8kSPe75-O5jZD28lrd0D.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Artist - Get Artists",
 			"request": {
 				"method": "GET",
@@ -396,7 +559,10 @@
 						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3977/api/artists/2",
 					"protocol": "http",
@@ -414,7 +580,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9a497527-713e-463d-aed9-ad15ad084190",
 			"name": "Artist - Post Artist",
 			"request": {
 				"method": "POST",
@@ -433,12 +598,12 @@
 					"urlencoded": [
 						{
 							"key": "name",
-							"value": "Rayden",
+							"value": "Melendi",
 							"type": "text"
 						},
 						{
 							"key": "description",
-							"value": "Rap Español",
+							"value": "Pop español",
 							"type": "text"
 						}
 					]
@@ -459,7 +624,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2fa0b4b2-3837-491e-a2da-4148134f60eb",
 			"name": "Artist - Update Artist",
 			"request": {
 				"method": "PUT",
@@ -506,7 +670,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e327774c-4beb-477f-a604-94a014f03c6d",
 			"name": "Artist - Delete Artist",
 			"request": {
 				"method": "DELETE",
@@ -553,7 +716,52 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f71beb36-aa09-48fd-b1ed-091b7a17ca9c",
+			"name": "Artist - Delete Album",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1YjRlNDEzZTI0ODYxZTA0ZTU5MGUyOWYiLCJuYW1lIjoiUGVkcm8iLCJlbWFpbCI6InBlZHJvQGdhcmNpYS5lcyIsInJvbCI6IlJPTEVfVVNFUiIsImltYWdlIjoibnVsbCIsImlhdCI6MTUzMTk0MTk3OSwiZXhwIjoxNTM0NTMzOTc5fQ.0-A1ahUXv3HCUYjfMls5I6i6B5b1MHUCK9NRuwv_c4E\""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Extremoduro",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "Rock/Punk Español",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3977/api/album/5b68a31ee7846b10ad7e0b45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3977",
+					"path": [
+						"api",
+						"album",
+						"5b68a31ee7846b10ad7e0b45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "User - Upload Image",
 			"request": {
 				"method": "POST",
