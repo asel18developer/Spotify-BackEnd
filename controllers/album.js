@@ -283,9 +283,8 @@ function uploadImage(req, res){
                   res.status(200).send({
                     type: 'Succesfull',
                     message: 'Imagen subida correctamente.',
-                    file_path: file_path,
-                    file_name: file_name,
-                    file_ext: file_ext
+                    albumUpdated,
+                    file_name: file_name
                   });
 
                 }

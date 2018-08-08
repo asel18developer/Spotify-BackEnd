@@ -265,9 +265,8 @@ function uploadFile(req, res){
                   res.status(200).send({
                     type: 'Succesfull',
                     message: 'El fichero se ha subido correctamente.',
-                    file_path: file_path,
-                    file_name: file_name,
-                    file_ext: file_ext
+                    songUpdated,
+                    file_name: file_name
                   });
 
                 }
